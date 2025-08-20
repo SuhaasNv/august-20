@@ -8,7 +8,7 @@ COPY mvnw.cmd .
 COPY .mvn .mvn
 COPY src src
 COPY pom.xml .
-RUN ./mvnw package -DskipTests=true
+RUN mvn package -Dmaven.test.skip=true
 
 # second stage
 FROM openjdk:23-jdk-oracle
